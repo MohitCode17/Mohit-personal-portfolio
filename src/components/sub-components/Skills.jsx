@@ -63,7 +63,7 @@ const Skills = () => {
       id="skills"
       className="mt-20 sm:mt-0 max-w-[53rem] scroll-mt-28 text-center"
     >
-      <h1 className="font-semibold text-3xl sm:text-5xl mb-10 text-tubeLight-effect">
+      <h1 className="font-semibold text-3xl sm:text-4xl mb-9 text-tubeLight-effect">
         Technical Expertise
       </h1>
 

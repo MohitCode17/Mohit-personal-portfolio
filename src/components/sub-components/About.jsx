@@ -9,7 +9,7 @@ const About = () => {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <h1 className="font-semibold text-3xl sm:text-5xl mb-6 text-tubeLight-effect">
+      <h1 className="font-semibold text-3xl sm:text-4xl mb-6 text-tubeLight-effect">
         A Snapshot of My Journey
       </h1>
       <p>
