@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const links = [
   {
@@ -32,6 +33,9 @@ const links = [
 ];
 
 const Header = () => {
+  const location = useLocation();
+  const currentHashActive = location.hash;
+
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -53,7 +57,11 @@ const Header = () => {
             >
               <a
                 href={link.hash}
-                className="flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300"
+                className={`flex w-full items-center justify-center px-3 py-3 ${
+                  currentHashActive === link.hash
+                    ? "text-gray-950 dark:text-gray-300 bg-gray-700 rounded-full h-7 px-3"
+                    : "text-gray-500 hover:text-gray-950 dark:text-gray-500 dark:hover:text-gray-300"
+                }`}
               >
                 {link.name}
               </a>
