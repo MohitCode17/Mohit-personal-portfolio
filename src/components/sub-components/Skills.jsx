@@ -61,7 +61,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="mt-20 sm:mt-0 max-w-[53rem] scroll-mt-28 text-center"
+      className="mt-20 sm:mb-40 sm:mt-0 max-w-[53rem] scroll-mt-28 text-center"
     >
       <h1 className="font-semibold text-3xl sm:text-4xl mb-9 text-tubeLight-effect">
         Technical Expertise

@@ -1,4 +1,5 @@
 import About from "@/components/sub-components/About";
+import Contact from "@/components/sub-components/Contact";
 import Intro from "@/components/sub-components/Intro";
 import Skills from "@/components/sub-components/Skills";
 import Timeline from "@/components/sub-components/Timeline";
@@ -10,6 +11,7 @@ const Home = () => {
       <About />
       <Timeline />
       <Skills />
+      <Contact />
     </div>
   );
 };

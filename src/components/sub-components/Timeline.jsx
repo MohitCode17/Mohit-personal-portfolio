@@ -56,7 +56,7 @@ const Timeline = () => {
             <motion.div
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{duration: 0.3, delay: 0.1}}
+              transition={{ duration: 0.3, delay: 0.1 }}
             >
               <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
                 {item.title}
