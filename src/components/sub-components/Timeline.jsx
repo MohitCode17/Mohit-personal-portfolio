@@ -1,35 +1,7 @@
-import { MapPin } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
 
-export const experiencesData = [
-  {
-    title: "Bachelor of Commerce",
-    location: "Delhi University, India",
-    from: 2015,
-    to: 2015,
-    description:
-      "Completed a Bachelor of Commerce degree, gaining a strong foundation in business principles, analytical thinking, accounting, and problem-solving.",
-  },
-  {
-    title: "Bachelor of Commerce",
-    location: "Delhi University, India",
-    from: 2015,
-    to: 2015,
-    description:
-      "Completed a Bachelor of Commerce degree, gaining a strong foundation in business principles, analytical thinking, accounting, and problem-solving.",
-  },
-  {
-    title: "Bachelor of Commerce",
-    location: "Delhi University, India",
-    from: 2015,
-    to: 2015,
-    description:
-      "Completed a Bachelor of Commerce degree, gaining a strong foundation in business principles, analytical thinking, accounting, and problem-solving.",
-  },
-];
-
-const Timeline = () => {
+const Timeline = ({ timelines }) => {
   return (
     <section
       id="experience"
@@ -40,8 +12,8 @@ const Timeline = () => {
       </h1>
 
       <ol className="relative border-s border-gray-200 dark:border-gray-700">
-        {experiencesData.map((item, index) => (
-          <li className="mb-10 ms-6" key={index}>
+        {timelines.map((timeline) => (
+          <li className="mb-10 ms-6" key={timeline._id}>
             <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
               <svg
                 className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
@@ -59,17 +31,17 @@ const Timeline = () => {
               transition={{ duration: 0.3, delay: 0.1 }}
             >
               <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-                {item.title}
+                {timeline?.title}
               </h3>
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                Duration: {item.from} - {item.to}
+                Duration: {timeline?.timeline.from} - {timeline?.timeline.to}
               </time>
-              <p className="text-base font-normal text-gray-500 dark:text-gray-500 mb-2 flex items-center gap-1">
+              {/* <p className="text-base font-normal text-gray-500 dark:text-gray-500 mb-2 flex items-center gap-1">
                 <MapPin size={18} />
-                {item.location}
-              </p>
+                {timeline?.location}
+              </p> */}
               <p className="text-base font-normal text-gray-500 dark:text-gray-400">
-                {item.description}
+                {timeline?.description}
               </p>
             </motion.div>
           </li>

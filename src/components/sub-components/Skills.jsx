@@ -1,48 +1,5 @@
 import { motion } from "framer-motion";
 
-const skillsData = [
-  {
-    svg: "./images/tech/html.png",
-    skillName: "HTML",
-  },
-  {
-    svg: "./images/tech/css.png",
-    skillName: "CSS",
-  },
-  {
-    svg: "./images/tech/javascript.png",
-    skillName: "JavaScript",
-  },
-  {
-    svg: "./images/tech/typescript.png",
-    skillName: "TypeScript",
-  },
-  {
-    svg: "./images/tech/reactjs.png",
-    skillName: "React",
-  },
-  {
-    svg: "./images/tech/nodejs.png",
-    skillName: "Node.js",
-  },
-  {
-    svg: "./images/tech/mongodb.png",
-    skillName: "MongoDB",
-  },
-  {
-    svg: "./images/tech/tailwind.png",
-    skillName: "Tailwind CSS",
-  },
-  {
-    svg: "./images/tech/redux.png",
-    skillName: "Redux",
-  },
-  {
-    svg: "./images/tech/git.png",
-    skillName: "Git & GitHub",
-  },
-];
-
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
@@ -57,7 +14,7 @@ const fadeInAnimationVariants = {
   }),
 };
 
-const Skills = () => {
+const Skills = ({ skills }) => {
   return (
     <section
       id="skills"
@@ -68,9 +25,9 @@ const Skills = () => {
       </h1>
 
       <ul className="flex flex-wrap justify-center gap-4 text-lg">
-        {skillsData.map((skill, index) => (
+        {skills.map((skill, index) => (
           <motion.li
-            key={index}
+            key={skill._id}
             variants={fadeInAnimationVariants}
             initial="initial"
             whileInView="animate"
@@ -80,10 +37,10 @@ const Skills = () => {
             custom={index}
           >
             <img
-              src={skill.svg}
-              alt={skill.skillName}
+              src={skill?.svg.url}
+              alt={skill?.title}
               className="h-14 sm:h-24 w-auto"
-              title={skill.skillName}
+              title={skill?.title}
             />
           </motion.li>
         ))}

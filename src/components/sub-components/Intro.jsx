@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-const Intro = () => {
+const Intro = ({ user }) => {
   return (
     <section
       id="home"
@@ -21,11 +21,11 @@ const Intro = () => {
             transition={{ type: "tween", duration: 0.2 }}
           >
             <img
-              src="https://st.depositphotos.com/2101611/4338/v/600/depositphotos_43381243-stock-illustration-male-avatar-profile-picture.jpg"
-              alt="Mohit Portrait"
+              src={user ? `${user.avatar.url}` : "./images/mg.png"}
+              alt="Mohit Gupta"
               width="192"
               height="192"
-              className="h-32 w-32 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-40 w-40 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
               title="Mohit Gupta"
             />
           </motion.div>
@@ -39,25 +39,35 @@ const Intro = () => {
               delay: 0.1,
               stiffness: 125,
             }}
-            className="text-4xl absolute bottom-1 right-0"
+            className="text-4xl absolute bottom-3 right-1"
           >
             👋
           </motion.span>
         </div>
       </div>
 
-      <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-normal !leading-[1.3] sm:text-4xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <span className="font-bold">Hyy, I'm Mohit,</span> a{" "}
-        <span className="font-bold">full-stack developer</span> with passion for
-        building <span className="font-bold">dynamic and engaging</span>{" "}
-        <span className="italic">sites & applications</span>. My current focus
-        is <span className="underline">Next.js.</span>
-      </motion.h1>
+      {user ? (
+        <motion.h1
+          className="mb-10 mt-4 px-4 text-2xl font-normal !leading-[1.3] sm:text-4xl"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          dangerouslySetInnerHTML={{ __html: user && user.intro }}
+        ></motion.h1>
+      ) : (
+        <motion.h1
+          className="mb-10 mt-4 px-4 text-2xl font-normal !leading-[1.3] sm:text-4xl"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <span className="font-bold">Hyy, I'm Mohit,</span> a{" "}
+          <span className="font-bold">full-stack developer</span> with passion
+          for building <span className="font-bold">dynamic and engaging</span>{" "}
+          <span className="italic">sites & applications</span>. My current focus
+          is <span className="underline">Next.js.</span>
+        </motion.h1>
+      )}
 
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium"
@@ -73,7 +83,8 @@ const Intro = () => {
         </Link>
 
         <Link
-          to={""}
+          to={user ? user.resume.url : "#"}
+          target="_blank"
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
         >
           <HiDownload /> Download Resume
@@ -87,28 +98,40 @@ const Intro = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <Link to={""} title="Github">
+          <Link to={user ? user.githubUrl : "#"} target="_blank" title="Github">
             <FaGithub
               size={24}
               className="focus:scale-110 hover:scale-110 active:scale-105 transition text-black"
             />
           </Link>
 
-          <Link to={""} title="Linkedin">
+          <Link
+            to={user ? user.linkedinUrl : "#"}
+            target="_blank"
+            title="Linkedin"
+          >
             <FaLinkedinIn
               size={24}
               className="focus:scale-110 hover:scale-110 active:scale-105 transition text-[#0077B5]"
             />
           </Link>
 
-          <Link to={""} title="Twitter">
+          <Link
+            to={user ? user.twitterUrl : "#"}
+            target="_blank"
+            title="Twitter"
+          >
             <FaXTwitter
               size={24}
               className="focus:scale-110 hover:scale-110 active:scale-105 transition text-black"
             />
           </Link>
 
-          <Link to={""} title="Instagram">
+          <Link
+            to={user ? user.instagramUrl : "#"}
+            target="_blank"
+            title="Instagram"
+          >
             <FaInstagram
               size={24}
               className="focus:scale-110 hover:scale-110 active:scale-105 transition text-pink-500"
