@@ -59,7 +59,7 @@ const Header = () => {
                 href={link.hash}
                 className={`flex w-full items-center justify-center px-3 py-3 ${
                   currentHashActive === link.hash
-                    ? "text-gray-950 dark:text-gray-300 bg-gray-700 rounded-full h-7 px-3"
+                    ? "text-gray-950 dark:text-gray-300"
                     : "text-gray-500 hover:text-gray-950 dark:text-gray-500 dark:hover:text-gray-300"
                 }`}
               >

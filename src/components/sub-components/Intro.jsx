@@ -11,7 +11,7 @@ const Intro = ({ user }) => {
   return (
     <section
       id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem] pt-28 sm:pt-36"
+      className="mb-28 max-w-[54rem] text-center sm:mb-0 scroll-mt-[100rem] mt-28 sm:mt-36"
     >
       <div className="flex items-center justify-center">
         <div className="relative">
@@ -25,7 +25,7 @@ const Intro = ({ user }) => {
               alt="Mohit Gupta"
               width="192"
               height="192"
-              className="h-40 w-40 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-48 w-48 rounded-full object-cover border-[0.35rem] border-white/15 shadow-xl"
               title="Mohit Gupta"
             />
           </motion.div>
@@ -48,7 +48,7 @@ const Intro = ({ user }) => {
 
       {user ? (
         <motion.h1
-          className="mb-10 mt-4 px-4 text-2xl font-normal !leading-[1.3] sm:text-4xl"
+          className="mb-10 mt-4 text-2xl font-normal !leading-[1.6] sm:!leading-[1.3] sm:text-4xl"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
@@ -61,11 +61,11 @@ const Intro = ({ user }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <span className="font-bold">Hyy, I'm Mohit,</span> a{" "}
-          <span className="font-bold">full-stack developer</span> with passion
-          for building <span className="font-bold">dynamic and engaging</span>{" "}
-          <span className="italic">sites & applications</span>. My current focus
-          is <span className="underline">Next.js.</span>
+          <span className="font-bold">Hello, I'm Mohit,</span> a{" "}
+          <span className="font-bold">full-stack developer</span> from{" "}
+          <span className="font-bold">India</span>, passionate about building{" "}
+          <span className="font-bold">dynamic and engaging</span>{" "}
+          <span className="italic">websites & applications</span>
         </motion.h1>
       )}
 
@@ -75,12 +75,12 @@ const Intro = ({ user }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.3 }}
       >
-        <Link
-          to={"#contact"}
+        <a
+          href={"#contact"}
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
         >
           Contact me <BsArrowRight />
-        </Link>
+        </a>
 
         <Link
           to={user ? user.resume.url : "#"}
@@ -101,7 +101,7 @@ const Intro = ({ user }) => {
           <Link to={user ? user.githubUrl : "#"} target="_blank" title="Github">
             <FaGithub
               size={24}
-              className="focus:scale-110 hover:scale-110 active:scale-105 transition text-black"
+              className="focus:scale-125 hover:scale-125 active:scale-110 transition duration-300 text-black"
             />
           </Link>
 
@@ -112,7 +112,7 @@ const Intro = ({ user }) => {
           >
             <FaLinkedinIn
               size={24}
-              className="focus:scale-110 hover:scale-110 active:scale-105 transition text-[#0077B5]"
+              className="focus:scale-125 hover:scale-125 active:scale-110 transition duration-300 text-[#0077B5]"
             />
           </Link>
 
@@ -123,18 +123,18 @@ const Intro = ({ user }) => {
           >
             <FaXTwitter
               size={24}
-              className="focus:scale-110 hover:scale-110 active:scale-105 transition text-black"
+              className="focus:scale-125 hover:scale-125 active:scale-110 transition duration-300 text-black"
             />
           </Link>
 
           <Link
-            to={user ? user.instagramUrl : "#"}
+            to={user ? user.instagramUrl : "/"}
             target="_blank"
             title="Instagram"
           >
             <FaInstagram
               size={24}
-              className="focus:scale-110 hover:scale-110 active:scale-105 transition text-pink-500"
+              className="focus:scale-125 hover:scale-125 active:scale-110 transition duration-300 text-pink-500"
             />
           </Link>
         </motion.div>

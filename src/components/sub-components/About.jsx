@@ -5,17 +5,17 @@ const About = ({ user }) => {
     <>
       {user ? (
         <motion.section
-          className="sm:my-40 max-w-[48rem] text-center leading-8 scroll-mt-28"
+          className="sm:my-40 max-w-[54rem] text-center leading-8 scroll-mt-32"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.175 }}
           id="about"
         >
-          <h1 className="font-semibold text-3xl sm:text-4xl mb-6 text-tubeLight-effect">
+          <h1 className="font-semibold text-3xl sm:text-4xl mb-10 text-tubeLight-effect">
             A Snapshot of My Journey
           </h1>
 
-          <div dangerouslySetInnerHTML={{ __html: user && user.aboutMe }}></div>
+          <p dangerouslySetInnerHTML={{ __html: user && user.aboutMe }}></p>
         </motion.section>
       ) : (
         <motion.section
