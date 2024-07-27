@@ -11,7 +11,7 @@ const Intro = ({ user }) => {
   return (
     <section
       id="home"
-      className="mb-28 max-w-[54rem] text-center sm:mb-0 scroll-mt-[100rem] mt-28 sm:mt-36"
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem] mt-28 sm:mt-36"
     >
       <div className="flex items-center justify-center">
         <div className="relative">
@@ -21,7 +21,7 @@ const Intro = ({ user }) => {
             transition={{ type: "tween", duration: 0.2 }}
           >
             <img
-              src={user ? `${user.avatar.url}` : "./images/mg.png"}
+              src={user ? `${user.avatar.url}` : "./images/placeholder.jpg"}
               alt="Mohit Gupta"
               width="192"
               height="192"

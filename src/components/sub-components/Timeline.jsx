@@ -5,7 +5,7 @@ const Timeline = ({ timelines }) => {
   return (
     <section
       id="experience"
-      className="mt-36 sm:mt-10 max-w-[54rem] scroll-mt-32"
+      className="mt-36 sm:mt-10 max-w-[50rem] scroll-mt-32"
     >
       <h1 className="font-semibold text-3xl sm:text-4xl mb-14 text-tubeLight-effect text-center">
         Experience Timeline

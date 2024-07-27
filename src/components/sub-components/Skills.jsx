@@ -18,7 +18,7 @@ const Skills = ({ skills }) => {
   return (
     <section
       id="skills"
-      className="my-16 sm:my-32 max-w-[54rem] scroll-mt-32 text-center"
+      className="mt-16 sm:mt-32 mb-10 sm:mb-40 max-w-[50rem] scroll-mt-32 text-center"
     >
       <h1 className="font-semibold text-3xl sm:text-4xl mb-9 text-tubeLight-effect">
         Technical Expertise

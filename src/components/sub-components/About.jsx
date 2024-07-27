@@ -5,7 +5,7 @@ const About = ({ user }) => {
     <>
       {user ? (
         <motion.section
-          className="sm:my-40 max-w-[54rem] text-center leading-8 scroll-mt-32"
+          className="sm:my-40 max-w-[50rem] text-center leading-8 scroll-mt-32"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.175 }}
