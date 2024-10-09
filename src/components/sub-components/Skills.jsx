@@ -20,11 +20,11 @@ const Skills = ({ skills }) => {
       id="skills"
       className="mt-16 sm:mt-32 mb-10 sm:mb-40 max-w-[50rem] scroll-mt-32 text-center"
     >
-      <h1 className="font-semibold text-3xl sm:text-4xl mb-9 text-tubeLight-effect">
+      <h1 className="font-semibold text-3xl sm:text-4xl mb-16 text-tubeLight-effect">
         Technical Expertise
       </h1>
 
-      <ul className="flex flex-wrap justify-center gap-4 text-lg">
+      <ul className="flex flex-wrap justify-center gap-8 text-lg">
         {skills.map((skill, index) => (
           <motion.li
             key={skill._id}
@@ -42,6 +42,7 @@ const Skills = ({ skills }) => {
               className="h-14 sm:h-24 w-auto"
               title={skill?.title}
             />
+            <p className="text-sm font-bold text-gray-400">{skill.title}</p>
           </motion.li>
         ))}
       </ul>

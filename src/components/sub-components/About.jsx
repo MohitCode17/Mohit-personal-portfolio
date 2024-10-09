@@ -5,17 +5,19 @@ const About = ({ user }) => {
     <>
       {user ? (
         <motion.section
-          className="sm:my-40 max-w-[50rem] text-center leading-8 scroll-mt-32"
+          className="mt-10 mb-16 sm:my-48 max-w-[50rem] text-center leading-8 scroll-mt-32"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.175 }}
           id="about"
         >
-          <h1 className="font-semibold text-3xl sm:text-4xl mb-10 text-tubeLight-effect">
+          <h1 className="font-semibold text-3xl sm:text-4xl mb-16 text-tubeLight-effect">
             A Snapshot of My Journey
           </h1>
-
-          <p dangerouslySetInnerHTML={{ __html: user && user.aboutMe }}></p>
+          <p
+            className="text-xl sm:text-2xl"
+            dangerouslySetInnerHTML={{ __html: user && user.aboutMe }}
+          ></p>
         </motion.section>
       ) : (
         <motion.section
@@ -28,7 +30,7 @@ const About = ({ user }) => {
           <h1 className="font-semibold text-3xl sm:text-4xl mb-6 text-tubeLight-effect">
             A Snapshot of My Journey
           </h1>
-          <p>
+          <p className="text-xl sm:text-2xl">
             A full-stack web developer with a unique journey from the world of{" "}
             <span className="font-medium">Commerce</span> background to{" "}
             <span className="font-medium">web development</span>. After earning
