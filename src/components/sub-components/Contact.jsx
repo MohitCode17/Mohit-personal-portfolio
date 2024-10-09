@@ -4,6 +4,7 @@ import { Textarea } from "../ui/textarea";
 import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { BACKEND_URL } from "@/util/service";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -16,7 +17,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/message/send`, {
+      const res = await fetch(`${BACKEND_URL}/api/v1/message/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

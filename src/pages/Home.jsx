@@ -4,6 +4,7 @@ import Intro from "@/components/sub-components/Intro";
 import Projects from "@/components/sub-components/Projects";
 import Skills from "@/components/sub-components/Skills";
 import Timeline from "@/components/sub-components/Timeline";
+import { BACKEND_URL } from "@/util/service";
 import { useEffect, useState } from "react";
 
 const Home = () => {
@@ -15,7 +16,7 @@ const Home = () => {
   // FETCH USER
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await fetch(`http://localhost:8000/api/v1/user/me/portfolio`);
+      const res = await fetch(`${BACKEND_URL}/api/v1/user/me/portfolio`);
       const data = await res.json();
 
       if (data.success === true) {
@@ -28,7 +29,7 @@ const Home = () => {
   // FETCH TIMELINES
   useEffect(() => {
     const fetchTimeline = async () => {
-      const res = await fetch(`http://localhost:8000/api/v1/timeline/getall`);
+      const res = await fetch(`${BACKEND_URL}/api/v1/timeline/getall`);
       const data = await res.json();
 
       if (data.success === true) {
@@ -41,7 +42,7 @@ const Home = () => {
   // FETCH SKILLS
   useEffect(() => {
     const fetchSkills = async () => {
-      const res = await fetch(`http://localhost:8000/api/v1/skill/getall`);
+      const res = await fetch(`${BACKEND_URL}/api/v1/skill/getall`);
       const data = await res.json();
 
       if (data.success === true) {
@@ -55,7 +56,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/v1/project/getall");
+        const res = await fetch(`${BACKEND_URL}/api/v1/project/getall`);
         const data = await res.json();
 
         if (data.success === true) {

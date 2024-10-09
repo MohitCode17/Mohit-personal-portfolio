@@ -1,3 +1,4 @@
+import { BACKEND_URL } from "@/util/service";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -8,9 +9,7 @@ const SingleProject = () => {
   useEffect(() => {
     const fetchProjectDetails = async () => {
       try {
-        const res = await fetch(
-          `http://localhost:8000/api/v1/project/get/${id}`
-        );
+        const res = await fetch(`${BACKEND_URL}/api/v1/project/get/${id}`);
         const data = await res.json();
 
         if (data.success === true) {
