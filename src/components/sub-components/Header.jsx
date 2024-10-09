@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 const links = [
@@ -34,7 +35,13 @@ const links = [
 
 const Header = () => {
   const location = useLocation();
-  const currentHashActive = location.hash;
+  const [currentHashActive, setCurrentHashActive] = useState(
+    location.hash || "#home"
+  );
+
+  useEffect(() => {
+    setCurrentHashActive(location.hash || "#home");
+  }, [location]);
 
   return (
     <header className="z-[999] relative">
