@@ -28,11 +28,16 @@ const SingleProject = () => {
           <div className="space-y-12">
             <div className="border-b border-gray-900/10 pb-12">
               <div className="flex items-end justify-end mt-10 sm:mt-0">
-                <Link className="bg-purple-900 px-4 py-2 rounded-full" to={"/"}>Go back to home</Link>
+                <Link
+                  className="bg-gray-900 hover:bg-gray-950 transition duration-300 px-4 py-2 rounded-full"
+                  to={"/"}
+                >
+                  Go back to home
+                </Link>
               </div>
               <div className="mt-10 flex flex-col gap-5">
                 <div className="w-full sm:col-span-4">
-                  <h1 className="text-2xl sm:text-4xl font-bold mb-4 text-center">
+                  <h1 className="text-2xl sm:text-4xl font-bold mb-8 mt-4 text-center">
                     {projectDetails?.title}
                   </h1>
                   <img
@@ -45,10 +50,10 @@ const SingleProject = () => {
                   />
                 </div>
 
-                <div className="w-full sm:col-span-4">
+                <div className="w-full sm:col-span-4 mt-4">
                   <p className="text-2xl mb-2">Description of Project</p>
                   <div
-                    className="text-lg py-2 text-gray-200"
+                    className="text-lg py-2 text-gray-400"
                     dangerouslySetInnerHTML={{
                       __html:
                         projectDetails?.description &&
@@ -57,7 +62,7 @@ const SingleProject = () => {
                   ></div>
                 </div>
 
-                <div className="w-full sm:col-span-4">
+                <div className="w-full sm:col-span-4 mt-4">
                   <p className="text-2xl mb-2">Technology Use</p>
                   <div className="py-2 flex flex-wrap gap-2">
                     {projectDetails?.tags.map((tag, index) => (
@@ -71,12 +76,12 @@ const SingleProject = () => {
                   </div>
                 </div>
 
-                <div className="w-full sm:col-span-4">
+                <div className="w-full sm:col-span-4 mt-4">
                   <p className="text-2xl mb-2">Stack</p>
-                  <p>{projectDetails?.stack}</p>
+                  <p className="text-gray-400">{projectDetails?.stack}</p>
                 </div>
 
-                <div className="w-full sm:col-span-4">
+                <div className="w-full sm:col-span-4 mt-4">
                   <p className="text-2xl mb-2">Github Repository</p>
                   <Link
                     className="text-sky-500"
@@ -87,7 +92,7 @@ const SingleProject = () => {
                   </Link>
                 </div>
 
-                <div className="w-full sm:col-span-4">
+                <div className="w-full sm:col-span-4 mt-4">
                   <p className="text-2xl mb-2">Live Project</p>
                   <Link
                     className="text-sky-500"
